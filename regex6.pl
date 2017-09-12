@@ -16,6 +16,7 @@
 #
 
 while (<>) {
-   s/SEARCH/REPLACE/;
+   s/SEARCH/REPLACE/; 
+   s/SEARCH2/REPLACE2/;
    print;
 }
