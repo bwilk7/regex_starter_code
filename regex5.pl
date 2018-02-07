@@ -32,6 +32,11 @@
 #
 #     <a href="https://www.csee.umbc.edu/~bwilk1/433/index.html#schedule">Schedule</a>
 #     <a href="http://umbc.edu">UMBC's Homepage</a>
+#
+#     The following should not be converted
+#     ![A picture of UMBC](https://umbc.edu/picture.png)
+#
+
 
 while(<>) {
   s/REGEX/REPLACE/;

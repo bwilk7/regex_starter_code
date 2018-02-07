@@ -1,25 +1,21 @@
 #!/usr/bin/perl 
 
-# Match lines that report an priority of ERROR or FATAL
+# Match lines of git log --stat --pretty=oneline that indicate files with only additions or only deletions
 #
-# Each line is in a format known as TTCC, as follows:
+# The lines you are interested in have the format: 
 # 
-#    %n [%t] %p %f %c - %m
+#     FileName | NUM_LINES CHANGE_TYPES
 #
 # Where...
 #
-# %n - Milliseconds elapsed since program started
-# %t - The thread that send the message
-# %p - The priority of the message
-# %f - The category of the message ( usually the class it was called from)
-# %c - Any contextual information to present (This can be omitted)
-# %m - The message
+# CHANGE_TYPES is entirely +'s or entierly -'s
 #
 # For example:
-#
-# '346 [main] ERROR org.apache.log4j.examples.SortAlgo.DUMP - Tried to dump an uninitialized array.' matches
-# '331 [main] INFO  org.apache.log4j.examples.SortAlgo.DUMP - Element [1] = 1' does not match
-# 
+# 'data/airports.tsv | 1284 +++++++++++++++++++++++++++++++++++++++++++++++++++++' matches
+# 'binder/postBuild | 1 -' matches
+# 'Lecture02.ipynb | 1208 ++++++++++++++++++++++---------------------------------' does not match
+# '008f60c4d3b904d37bdcaf49d654656cb2fab6bf Making sure airport data is there' does not match
+# '1 file changed, 2 insertions(+)' does not match'
 
 while(<>) {
   print if /REGEX/;
