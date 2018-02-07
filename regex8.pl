@@ -6,7 +6,7 @@
 #         name: "STATE_NAME",
 #         year_joined: "YEAR",
 #         area: "AREA",
-#         govenor: "GOVENOR_NAME"
+#         governor: "GOVERNOR_NAME"
 # }
 #
 # For example, the following line...
@@ -15,7 +15,7 @@
 #
 # ...would be reported as...
 #
-#     '{[NEWLINE][TAB]name: "Maryland",[NEWLINE][TAB],year_joined: "1788",[NEWLINE][TAB]area: "32133",[NEWLINE][TAB]govenor: "Larry Hogan"[NEWLINE]}'
+#     '{[NEWLINE][TAB]name: "Maryland",[NEWLINE][TAB],year_joined: "1788",[NEWLINE][TAB]area: "32133",[NEWLINE][TAB]governor: "Larry Hogan"[NEWLINE]}'
 #
 # ...where [NEWLINE] is literally a newline character and [TAB] is literally a
 # tab character.
